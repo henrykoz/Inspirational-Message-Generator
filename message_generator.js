@@ -24,11 +24,25 @@ function generateRandomNumber(num) {
   
     // use the object's properties to customize the message being added to personalWisdom  
     switch(prop) {
-      case 'main':
-        inspirationalMessage.push(`"${messageGenerator[prop][optionIdx]} + ${messageGenerator[prop][optionIdx]} + ${messageGenerator[prop][optionIdx]}"`)
+      case 'starters':
+        inspirationalMessage.push(`${messageGenerator[prop][optionIdx]}`)
+        break
+      case 'middles':
+        inspirationalMessage.push(`${messageGenerator[prop][optionIdx]}`)
+        break
+      case 'endings':
+        inspirationalMessage.push(`${messageGenerator[prop][optionIdx]}`)
         break
       default:
         inspirationalMessage.push('There is not enough info.')
     }
   }
 
+function formatMessage(meaasage) {
+    // Add some ASCII here?
+    // Add in more symbols to the array? like emojies or what not?
+    const formatted = inspirationalMessage.join('\n')
+    console.log(formatted)
+  }
+  
+  formatMessage(inspirationalMessage);
