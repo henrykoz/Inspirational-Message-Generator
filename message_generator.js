@@ -18,3 +18,17 @@ function generateRandomNumber(num) {
 
 //   console.log(generateRandomNumber(3));
 
+// Iterate over the object
+  for(let prop in messageGenerator) {
+    let optionIdx = generateRandomNumber(messageGenerator[prop].length)
+  
+    // use the object's properties to customize the message being added to personalWisdom  
+    switch(prop) {
+      case 'main':
+        inspirationalMessage.push(`"${messageGenerator[prop][optionIdx]} + ${messageGenerator[prop][optionIdx]} + ${messageGenerator[prop][optionIdx]}"`)
+        break
+      default:
+        inspirationalMessage.push('There is not enough info.')
+    }
+  }
+
